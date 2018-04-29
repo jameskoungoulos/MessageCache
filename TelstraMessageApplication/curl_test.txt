@@ -1,0 +1,20 @@
+POST
+curl -w "\n" -v -X POST -d '{"id":2019,"message":"Telstra 2019 Graduate Program"}' -H "Content-Type:text/plain" http://127.0.0.1:8080/TelstraMessageApplication/cache/messages
+curl -w "\n" -v -X POST -d '{"id":12,"message":"Hello World"}' -H "Content-Type:text/plain" http://127.0.0.1:8080/TelstraMessageApplication/cache/messages
+curl -w "\n" -v -X POST -d '{"id":12345678,"message":"Foo Bar"}' -H "Content-Type:text/plain" http://127.0.0.1:8080/TelstraMessageApplication/cache/messages
+
+
+Bad JSON:
+curl -w "\n" -v -X POST -d '{"id":-124,"message":"Hello World"}' -H "Content-Type:text/plain" http://127.0.0.1:8080/TelstraMessageApplication/cache/messages
+curl -w "\n" -v -X POST -d '{"id":12,"phone":555555555}' -H "Content-Type:text/plain" http://127.0.0.1:8080/TelstraMessageApplication/cache/messages
+
+GET
+curl -w "\n" -v http://127.0.0.1:8080/TelstraMessageApplication/cache/messages/2019
+curl -w "\n" -v http://127.0.0.1:8080/TelstraMessageApplication/cache/messages/12
+curl -w "\n" -v http://127.0.0.1:8080/TelstraMessageApplication/cache/messages/12345678
+
+Bad GET:
+curl -w "\n" -v http://127.0.0.1:8080/TelstraMessageApplication/cache/messages/8134
+
+DELETE
+curl -w "\n" -v -X DELETE http://127.0.0.1:8080/TelstraMessageApplication/cache/messages/
