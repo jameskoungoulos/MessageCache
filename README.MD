@@ -23,5 +23,5 @@ Stored documents must have two keys: id and message, with integer and string val
 This implementation assumes id values should always be non-negative.
 
 ## Extensions:
-⋅⋅*Cache entries have a 30 second TTL; this can be tweaked by changing the value of DEFAULT_TTL or altering the POST method storeMessage() in MessageCache.java.
-⋅⋅*Malformed documents are rejected with a 422 (Unprocessable Entity) status.
+1. Cache entries have a 30 second TTL; this can be tweaked by changing the value of DEFAULT_TTL or altering the POST method storeMessage() in MessageCache.java.
+2. Malformed documents are rejected with a 422 (Unprocessable Entity) status.
